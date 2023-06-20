@@ -2,6 +2,7 @@
 ## check version
 kubectl version --output=yaml
 kubectl version --output=json
+kubectl cluster-info
 
 ## creating pods 
 kubectl run nginx-webserver --image=nginx -o yaml
