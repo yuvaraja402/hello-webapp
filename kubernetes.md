@@ -64,3 +64,9 @@ kubectl delete replicaset <name_here>
 
 
 ## templates for pod creation
+
+
+## networking 
+## to get the exposed ports
+kubectl get service
+
