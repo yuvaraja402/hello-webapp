@@ -27,7 +27,7 @@ sudo docker network create network-yuva
 ## creating containers with user-defined network
 sudo docker run -it -p 85:80 --net=network-yuva --name enginex-server nginx
 
-## creating PostgreSQL database container under brudge network
+## creating PostgreSQL database container under bridge network
 sudo docker run -d -e POSTGRES_USER=root -e POSTGRES_DB=rootdb -e POSTGRES_PASSWORD=root --net=network-yuva --name pg-yuva -p 5432:5432 postgres
 
 # kubernetes commands
@@ -53,6 +53,8 @@ kubectl get replicasets
 ## check detailed information on pods / nodes / replicasets
 kubectl describe pods
 kubectl describe nodes
+kubectl describe replicaset
+kubectl describe service
 
 ## replication controller creation
 kubectl create -f file.yaml
