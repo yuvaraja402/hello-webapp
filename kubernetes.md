@@ -50,6 +50,8 @@ kubectl delete pod nginx-webserver
 kubectl get pods
 kubectl get nodes
 kubectl get replicasets
+kubectl get all
+
 ## check detailed information on pods / nodes / replicasets
 kubectl describe pods
 kubectl describe nodes
