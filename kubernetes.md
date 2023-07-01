@@ -46,11 +46,15 @@ kubectl edit pod nginx-webserver
 ## deleting pods
 kubectl delete pod nginx-webserver
 
-## check pods / nodes / replicasets
+## check pods / nodes / replica sets / namespaces 
 kubectl get pods
 kubectl get nodes
 kubectl get replicasets
 kubectl get all
+kubectl get ns
+kubectl get pods --namespace=<typehere>
+kubectl get configmaps
+kubectl get configmaps --namespace=<typehere>
 
 ## check detailed information on pods / nodes / replicasets
 kubectl describe pods
