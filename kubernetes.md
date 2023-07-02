@@ -22,6 +22,11 @@ sudo pip3 install psycopg2-binary (or) sudo pip3 install -r requirements.txt
 # Docker commands
 # install from official site 
 
+## installing docker with security (docker runs nativey with limited capability from root user, so can further abilities to container)
+docker run --cap-add SYS_ADMIN nginx
+docker run --cap-drop KILL nginx
+docker run --privileged nginx (with all rights)
+
 ## creating network
 sudo docker network create network-yuva
 ## creating containers with user-defined network
@@ -43,6 +48,9 @@ kubectl create -f file.yaml
 ## editing created pods
 kubectl edit pod nginx-webserver
 
+## making changes to file
+kubectl replace -f file.yaml
+
 ## deleting pods
 kubectl delete pod nginx-webserver
 
@@ -50,6 +58,8 @@ kubectl delete pod nginx-webserver
 kubectl get pods
 kubectl get nodes
 kubectl get replicasets
+kubectl get deploymentsets
+kubectl get services
 kubectl get all
 kubectl get ns
 kubectl get pods --namespace=<typehere>
@@ -62,19 +72,7 @@ kubectl describe nodes
 kubectl describe replicaset
 kubectl describe service
 
-## replication controller creation
-kubectl create -f file.yaml
-## making changes
-kubectl replace -f file.yaml
-## deletion
-kubectl delete replicaset <name_here>
 
 
-
-## templates for pod creation
-
-
-## networking 
-## to get the exposed ports
-kubectl get service
-
+## imperative commands
+kubectl create configmap webapp-config-map --from-literal=APP_COLOR=darkblue --from-literal=APP_OTHER=disregard
