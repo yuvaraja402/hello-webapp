@@ -27,6 +27,8 @@ docker run --cap-add SYS_ADMIN nginx
 docker run --cap-drop KILL nginx
 docker run --privileged nginx (with all rights)
 
+docker run --user=1001 nginx
+
 ## creating network
 sudo docker network create network-yuva
 ## creating containers with user-defined network
