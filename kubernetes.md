@@ -63,10 +63,13 @@ kubectl get replicasets
 kubectl get deploymentsets
 kubectl get services
 kubectl get all
-kubectl get ns
-kubectl get pods --namespace=<typehere>
-kubectl get configmaps
-kubectl get configmaps --namespace=<typehere>
+k get ns
+k get pods --namespace=<typehere>
+k get configmaps
+k get configmaps --namespace=<typehere>
+
+k get pods --selector app=function
+k get pods --selector env=prod,bu=finance,tier=frontend
 
 ## check detailed information on pods / nodes / replicasets
 kubectl describe pods
@@ -81,3 +84,15 @@ kubectl describe service
 kubectl logs <app_name> -n <namespace-here>
 ### config maps
 kubectl create configmap webapp-config-map --from-literal=APP_COLOR=darkblue --from-literal=APP_OTHER=disregard
+
+
+
+## Deployment rolling updates and roll backs
+k get deployments  / k get all
+k rollout status deployment my-deploy
+k rollout history deployment my-deploy    # gives revision details
+-- To return to previous build
+  k rollout undo deployment my-deploy
+  k rollout status deployment my-deploy --revision=2
+
+## Jobs and cronJobs
